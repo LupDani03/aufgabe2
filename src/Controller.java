@@ -9,12 +9,12 @@ public class Controller {
         this.service = service;
     }
 
-    public void alleMedikamenteeAnschreiben(){
-        for (Medikamente Medikamente: service.alleMedikamenteeZuruckgeben())
+    public void alleMedikamenteeAnschreiben() {
+        for (Medikamente Medikamente : service.alleMedikamenteeZuruckgeben())
             System.out.println(Medikamente);
     }
 
-    public void createMedikamente(){
+    public void createMedikamente() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Name: ");
         String name = sc.nextLine();
@@ -27,7 +27,7 @@ public class Controller {
         service.createAMedikamente(name, preis, krankheit);
     }
 
-    public void showAMedikamente(){
+    public void showAMedikamente() {
         System.out.println("Gebe den Namen des Medikamentees ein: ");
         Scanner sc = new Scanner(System.in);
         String name = sc.nextLine();
@@ -35,7 +35,7 @@ public class Controller {
         System.out.println(Medikamente);
     }
 
-    public void updateMedikamenteValidate(){
+    public void updateMedikamenteValidate() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Name des Medikamentees, das geandert werden soll: ");
         String name = sc.nextLine();
@@ -48,7 +48,7 @@ public class Controller {
         service.updateMedikamente(new Medikamente(name, preis, krankheit));
     }
 
-    public void deleteMedikamente(){
+    public void deleteMedikamente() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Name des Medikamentees, das geloescht werden soll: ");
         String name = sc.nextLine();

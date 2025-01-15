@@ -1,8 +1,5 @@
-import model.Patienten;
 import model.Medikamente;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Console {
@@ -12,15 +9,18 @@ public class Console {
     public Console(Controller controller) {
         this.controller = controller;
     }
-    public Console() {}
 
-    public void setController(Controller controller) {this.controller = controller;}
+    public Console() {
+    }
+
+    public void setController(Controller controller) {
+        this.controller = controller;
+    }
 
     public void run() {
         Scanner sc = new Scanner(System.in);
         int option = -1;
-        while (option != 0)
-        {
+        while (option != 0) {
             System.out.println("""
                     1. Medikamenten CRUD
                     0. Exit""");
@@ -40,16 +40,33 @@ public class Console {
                     int crudOption = sc.nextInt();
                     sc.nextLine();
                     switch (crudOption) {
-                        case 1: {controller.createMedikamente(); break;}
-                        case 2: {controller.alleMedikamenteeAnschreiben(); break;}
-                        case 3: {controller.showAMedikamente(); break;}
-                        case 4: {controller.updateMedikamenteValidate(); break;}
-                        case 5: {controller.deleteMedikamente(); break;}
-                        case 0:break;
+                        case 1: {
+                            controller.createMedikamente();
+                            break;
+                        }
+                        case 2: {
+                            controller.alleMedikamenteeAnschreiben();
+                            break;
+                        }
+                        case 3: {
+                            controller.showAMedikamente();
+                            break;
+                        }
+                        case 4: {
+                            controller.updateMedikamenteValidate();
+                            break;
+                        }
+                        case 5: {
+                            controller.deleteMedikamente();
+                            break;
+                        }
+                        case 0:
+                            break;
                     }
                 }
 
-                case 0: break;
+                case 0:
+                    break;
             }
         }
 
@@ -71,10 +88,10 @@ public class Console {
     }
 
     public void initialiseData(Repository<Medikamente> MedikamenteRepository) {
-        Medikamente Medikamente1 = new Medikamente("Paracetamol",40,"Kopfschmerzen");
-        Medikamente Medikamente2 = new Medikamente("Nurofen",30,"Kopfschmerzen");
-        Medikamente Medikamente3 = new Medikamente("Advil",20,"Migraine");
-        Medikamente Medikamente4 = new Medikamente("Strepsils",27,"Husten");
+        Medikamente Medikamente1 = new Medikamente("Paracetamol", 40, "Kopfschmerzen");
+        Medikamente Medikamente2 = new Medikamente("Nurofen", 30, "Kopfschmerzen");
+        Medikamente Medikamente3 = new Medikamente("Advil", 20, "Migraine");
+        Medikamente Medikamente4 = new Medikamente("Strepsils", 27, "Husten");
 
         MedikamenteRepository.addElement(Medikamente1);
         MedikamenteRepository.addElement(Medikamente2);
